@@ -4,5 +4,5 @@ FROM postgres
 ENV POSTGRES_PASSWORD docker
 # Sets the DB name
 ENV POSTGRES_DB countries
-# Copies contents to 'students.sql' over to Image and DB entry point
+# Copies contents to 'countries.sql' over to Image and DB entry point
 COPY countries.sql /docker-entrypoint-initdb.d/

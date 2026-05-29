@@ -1,1 +1,16 @@
 version: '3.9'
+
+services:
+  countries-db:
+    #image name
+    image: tooba52/countries-db:0.0.1.RELEASE 
+    #hostport:container port 5432 = db postgre port number
+    ports:
+      - "5432:5432"
+    #automaticallr estart when container stops
+    restart: always
+    networks:
+      - countries-networks
+
+network:
+  countries-network:
