@@ -1,6 +1,18 @@
 version: '3.9'
 
 services:
+
+  countries-mvc:
+    image: tooba52/countries-mvc:0.0.1.RELEASE
+    ports:
+      - "3000:3000"
+    restart: always
+    depends_on:
+      - countries-db
+    networks:
+      - countries-network
+
+
   countries-db:
     #image name
     image: tooba52/countries-db:0.0.1.RELEASE 
@@ -10,7 +22,7 @@ services:
     #automaticallr estart when container stops
     restart: always
     networks:
-      - countries-networks
+      - countries-network
 
-network:
+networks:
   countries-network:
